@@ -1,51 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<title>Music Dashboard</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #121212;
+        color: white;
+        display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 220px;
+        background: #000;
+        height: 100vh;
+        padding: 20px;
+    }
+
+    .sidebar h2 {
+        color: #1db954;
+    }
+
+    .menu a {
+        display: block;
+        color: #b3b3b3;
+        text-decoration: none;
+        margin: 15px 0;
+        font-size: 16px;
+    }
+
+    .menu a:hover {
+        color: white;
+    }
+
+    /* Main Content */
+    .main {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .header {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    /* Cards */
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: #181818;
+        padding: 15px;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        background: #282828;
+        transform: scale(1.05);
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .card h4 {
+        margin: 10px 0 5px;
+    }
+
+    .card p {
+        font-size: 12px;
+        color: #b3b3b3;
+    }
+
+    /* Player */
+    .player {
+        position: fixed;
+        bottom: 0;
+        left: 220px;
+        right: 0;
+        background: #181818;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .controls button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 18px;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+</style>
 </head>
 
-    <style>
-        body {
-            background-color: #f0f0f0;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-
-        h1 {
-            color: blue;
-            margin-top: 100px;
-        }
-    </style>
 <body>
 
-    <h1>Hello, World!</h1>
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>MyMusic</h2>
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Search</a>
+        <a href="#">Library</a>
+        <a href="#">Playlist</a>
+    </div>
+</div>
+
+<!-- Main -->
+<div class="main">
+    <div class="header">Trending Songs 🔥</div>
+
+    <div class="cards">
+        <div class="card">
+            <img src="https://via.placeholder.com/150">
+            <h4>Song Title</h4>
+            <p>Artist Name</p>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/150">
+            <h4>Another Song</h4>
+            <p>Artist Name</p>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/150">
+            <h4>Top Hit</h4>
+            <p>Artist Name</p>
+        </div>
+    </div>
+</div>
+
+<!-- Player -->
+<div class="player">
+    <div>Now Playing: Song Name</div>
+    <div class="controls">
+        <button>⏮</button>
+        <button>▶</button>
+        <button>⏭</button>
+    </div>
+</div>
+
 </body>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyAKNwIPkXbZHOJCB-UE6EWeOBejgJv34ts",
-    authDomain: "my-hello-d70f5.firebaseapp.com",
-    projectId: "my-hello-d70f5",
-    storageBucket: "my-hello-d70f5.firebasestorage.app",
-    messagingSenderId: "799430038892",
-    appId: "1:799430038892:web:b569492d94e58a4dbfcf49",
-    measurementId: "G-ERP276PMFC"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-
-
-
 </html>
